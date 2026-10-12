@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #f7f4ee;
+  color: #1e1d24;
+  font-family: Inter, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.tabular { font-variant-numeric: tabular-nums; }
+.sin-scroll { scrollbar-width: none; }
+.sin-scroll::-webkit-scrollbar { display: none; }
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes subir {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+@keyframes popIn {
+  0% { transform: scale(0.7); opacity: 0; }
+  70% { transform: scale(1.05); }
+  100% { transform: scale(1); opacity: 1; }
+}
+@keyframes destello {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(217, 96, 63, 0); }
+  50% { box-shadow: 0 0 0 10px rgba(217, 96, 63, 0.3); }
+}
+
+.animate-fade-in-up { animation: fadeInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.animate-subir { animation: subir 0.35s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.animate-pop-in { animation: popIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both; }
+.animate-destello { animation: destello 1.2s ease-in-out infinite; }
+
+@media print {
+  .no-imprimir { display: none !important; }
+  body { background: white; }
+}
